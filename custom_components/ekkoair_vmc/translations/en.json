@@ -1,0 +1,42 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to EkkoAir VMC",
+        "description": "Choose how Home Assistant reaches the Modbus interface.",
+        "data": {
+          "transport": "Connection type"
+        }
+      },
+      "tcp": {
+        "title": "Modbus TCP gateway",
+        "description": "Enter the actual Modbus TCP host and port. The Node-RED editor port is not the Modbus port.",
+        "data": {
+          "host": "Gateway host",
+          "port": "Modbus TCP port",
+          "unit_id": "Modbus unit ID",
+          "scan_interval": "Polling interval (seconds)"
+        }
+      },
+      "serial": {
+        "title": "RS-485 / Modbus RTU",
+        "description": "For a transparent serial server, enter socket://HOST:PORT as the device. The manual default is 19200 baud, 8 data bits, even parity, 1 stop bit.",
+        "data": {
+          "device": "Serial device or socket URL",
+          "baudrate": "Baud rate",
+          "bytesize": "Data bits",
+          "parity": "Parity",
+          "stopbits": "Stop bits",
+          "unit_id": "Modbus unit ID",
+          "scan_interval": "Polling interval (seconds)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not read the VMC registers. Check the connection, unit ID, and Modbus settings."
+    },
+    "abort": {
+      "already_configured": "This Modbus endpoint and unit ID are already configured."
+    }
+  }
+}
