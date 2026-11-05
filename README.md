@@ -2,4 +2,4 @@
 
 
 # Jeremias Ekkoair Logic VMC
-Custom component for Jeremias Ekkoair Logic VMC
+Custom component for Home Assistant.
