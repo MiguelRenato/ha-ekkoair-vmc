@@ -5,6 +5,7 @@
 Custom component for Home Assistant.
 
 To install go:
+
 Home Assistant Community Store 
 
 Custom repositories
