@@ -3,3 +3,15 @@
 
 # Jeremias Ekkoair Logic VMC
 Custom component for Home Assistant.
+
+To install go:
+Home Assistant Community Store 
+
+Custom repositories
+
+and paste link: https://github.com/MiguelRenato/ha-ekkoair-vmc
+
+ADD
+
+Enjoy 
+
