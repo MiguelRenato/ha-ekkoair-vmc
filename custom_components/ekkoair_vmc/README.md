@@ -17,6 +17,7 @@ The TCP connection needs the gateway's Modbus port. A Node-RED editor address su
 
 - VMC power, Summer Mode, Boost Mode, and Touch Button Lock switches, each preserving the other bits in holding register `0x9C40` and writing via FC16.
 - Fan speed level slider (0–7), writing only bits 6–9 of holding register `0x9C40` and preserving the other panel settings.
+- Boost Duration slider (30–3600 seconds, 300-second / 5-minute increments), using holding register `0x9C55`.
 - Power, fan-active, Summer Mode, Boost, Touch Button Lock, and fan tachometer binary sensors.
 - Interface and fan operating states, room and exhaust temperatures, fan output voltages, fan level, temperature level, AQS mode, tachometer timers, and sensor status.
 

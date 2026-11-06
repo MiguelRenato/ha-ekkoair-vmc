@@ -16,6 +16,7 @@ from .const import (
     REG_ACT_STATE_1,
     REG_ACT_T_EXHAUST,
     REG_ACT_T_ROOM,
+    REG_BOOST_DURATION,
     REG_FAN1_ACT_AO,
     REG_FAN1_ACT_TACHO,
     REG_FAN2_ACT_AO,
@@ -58,6 +59,7 @@ class VmcCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         """Read only small contiguous blocks; the device caps reads at 13 registers."""
         try:
             panel = (await self.unit.read_holding_registers(REG_PANEL_FRONT, 1))[0]
+            boost_duration = (await self.unit.read_holding_registers(REG_BOOST_DURATION, 1))[0]
             act_state_1 = (await self.unit.read_input_registers(REG_ACT_STATE_1, 1))[0]
             registers = await self.unit.read_input_registers(REG_ACT_T_ROOM, 6)
         except (ModbusError, IndexError) as err:
@@ -67,6 +69,7 @@ class VmcCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         exhaust_temp, exhaust_sensor_status = decode_temperature(registers[1])
         return {
             "panel": panel,
+            "boost_duration": boost_duration,
             "act_state_1": act_state_1,
             "room_temperature": room_temp,
             "room_sensor_status": room_sensor_status,

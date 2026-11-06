@@ -23,6 +23,7 @@ TRANSPORT_SERIAL = "serial"
 
 # These are protocol addresses from the EkkoAir Modbus manual.
 REG_PANEL_FRONT = 0x9C40
+REG_BOOST_DURATION = 0x9C55
 REG_ACT_STATE_1 = 0x7531
 REG_ACT_T_ROOM = 0x7540
 REG_ACT_T_EXHAUST = 0x7541
